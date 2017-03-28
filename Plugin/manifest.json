@@ -1,0 +1,18 @@
+{
+	"manifest_version" : 2,
+
+	"name" : "MoodSync",
+	"description": "Manages all your files and lets you tag your emotion to them",
+	"version": "1.0",
+	"browser_action": {
+    	"default_icon": "images/icon_48.png",
+    	"default_popup": "popup.html"
+  	},
+
+  	"permissions": [
+  		"activeTab",
+  		"pageCapture",
+  		"storage",
+  		" https://developers.google.com/custom-search/json-api/v1/using_rest" 
+  	]
+}
