@@ -9,15 +9,17 @@
  	<title>MoodSync</title>
  	
  	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="popup.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/popup.css">
 
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src='popup.js'></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/popup.js"></script>
+    <script src="js/addLinkToStorage.js"></script>
+    
  </head>
  <body>
  	<div class="container">
@@ -32,12 +34,16 @@
 					<div class="row">
 						<span class="req-input message-box valid">
 							<span class="input-status" data-toggle="tooltip" data-placement="top" title="what this page is about."> </span>
-							<textarea type="textarea" data-min-length="0" placeholder="Brief Description"></textarea>
+							<textarea type="textarea" name="description" data-min-length="0" placeholder="Brief Description" maxlength="500"></textarea>
 					</div>
-					
-    				<div class="[ col-xs-24 col-sm-12 ]">
-    				    <h4>Add Tags</h4><hr />
-    					
+                    <br>
+                    <div class="form-title">
+					      <span><h4>Add Tags</h4><hr /><span>
+                    </div>
+    			
+    				
+    				<div class="[ col-xs-12 col-sm-6 ]">
+                        
     					<div class="[ form-group ]">
     					    <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" />
     					    <div class="[ btn-group ]">
@@ -50,32 +56,34 @@
     					        </label>
     					    </div>
     					</div>
-
-    					<div class="[ form-group ]">
-    					    <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
-    					    <div class="[ btn-group ]">
-    					        <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
-    					            <span class="[ glyphicon glyphicon-plus ]"></span>
-    					            <span class="[ glyphicon glyphicon-minus ]"></span>
-    					        </label>
-    					        <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-default active ]">
-    					            Sad
-    					        </label>
-    					    </div>
-    					</div>
-
-    					<div class="[ form-group ]">
-    					    <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
-    					    <div class="[ btn-group ]">
-    					        <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
-    					            <span class="[ glyphicon glyphicon-plus ]"></span>
-    					            <span class="[ glyphicon glyphicon-minus ]"></span>
-    					        </label>
-    					        <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-default active ]">
-    					            Amazed
-    					        </label>
-    					    </div>
-    					</div>
+                        <div class="[ form-group ]">
+                            <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
+                            <div class="[ btn-group ]">
+                                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
+                                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                                </label>
+                                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-default active ]">
+                                    Amazed
+                                </label>
+                            </div>
+                        </div>
+    					
+                
+                        <div class="[ form-group ]">
+                            <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
+                            <div class="[ btn-group ]">
+                                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
+                                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                                </label>
+                                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-default active ]">
+                                    Sad
+                                </label>
+                            </div>
+                        </div>
+                        
+    					
 
     					<div class="[ form-group ]">
     					    <input type="checkbox" name="fancy-checkbox-danger-custom-icons" id="fancy-checkbox-danger-custom-icons" autocomplete="off" />
@@ -89,15 +97,13 @@
     					        </label>
     					    </div>
     					</div>
-
-
     				</div>
-    			
-					<div class="input-container">
-						<div class="row submit-row">
-							<input type="submit" class="btn btn-primary" value="Sync">
-						</div>
-				    </div>
+                
+				    <div class="input-container">
+				    	<div class="row submit-row">
+				    		<input type="submit" id="submitLink" class="btn btn-primary" value="Sync">
+				    	</div>
+                    </div>
                 </div>
 			</form>
 		</div>
