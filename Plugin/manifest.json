@@ -5,14 +5,18 @@
 	"description": "Manages all your files and lets you tag your emotion to them",
 	"version": "1.0",
 	"browser_action": {
-    	"default_icon": "images/icon_48.png",
+    	"default_icon": "images/icon.png",
     	"default_popup": "popup.html"
   	},
 
   	"permissions": [
+      "tabs",
   		"activeTab",
+      "<all_urls>",
+      "tabCapture",
   		"pageCapture",
   		"storage",
-  		" https://developers.google.com/custom-search/json-api/v1/using_rest" 
+      "https://developers.google.com/custom-search/json-api/v1/using_rest" 
+  		
   	]
 }
